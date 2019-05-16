@@ -5,8 +5,10 @@
     <body>
         <h1>Hello Naman</h1>
         <h2>Let's check who has been caught!</h2>
-        {% for i in array %}
-            <p>{{array[i]}}</p>
-        {% end for %}
+        <ol>
+         {% for i in range(0,len) %}
+            <li>{{ array[i] }}</li>
+         {% endfor %}
+      </ol>
     </body>
 </html>
