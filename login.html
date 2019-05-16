@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Market Medium</title>
+	<link rel="stylesheet" type="text/css" href="loginpage.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+</head>
+<body>
+
+<div class="centering">
+	<div class="left"></div>
+	<div class="background">
+		<div class="scale">
+		<form method="POST" action="{{url_for('details')}}">
+
+		<div class="h1 align adjust"><span>Details</span></div>
+			<div class="align">
+			  <div><label class="inline"><strong><span>FullName</span></strong></label></div>
+				<div>
+					<input type="text" name="username" >
+				</div>
+			</div>
+
+			<div class="align">
+				<div><label class="inline"><strong><span>Password</span></strong></label></div>
+				<div>
+					<input type="password" name="password" required>
+				</div>
+			</div>
+				<div class="align">
+					<input type="submit" value="Enter" name="Submit" class="btn btn-danger">
+				</div>
+		</form>
+	</div>
+	</div>
+</div>
+
+</body>
+</html>
