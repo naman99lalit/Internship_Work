@@ -9,7 +9,7 @@ def details():
 
 @app.route("/data", methods = ['POST','GET'])
 def data():
-    return render_template("data.html",len = len(array), array=array)
+    return render_template("data1.html",len = len(array), array=array)
 
 @app.route("/error",methods = ['POST' , 'GET'])
 def error():
