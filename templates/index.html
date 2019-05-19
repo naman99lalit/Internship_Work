@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.css" integrity="sha256-rnmbX+ZXZml9xbNUKt/qXfgpCi6zLJX7qqR+7vX/1ZY=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Oops</title>
+    <style>
+    .card {
+      margin: 0 auto;
+      float: none;
+      margin-bottom: 10px;
+     }
+     #presentation{
+       font-size: 18px;
+     	border-radius: 20px;
+      border:None;
+      outline:None;
+      height: 40px;
+    		background: blue;
+    	color: #fff;
+     }
+     #trick{
+       border: none;
+       outline: None;
+       color: white;
+       font-size: 18px;
+       background: blue;
+       border-radius: 20px
+     }
+     #home1{
+       margin-top: 100px
+     }
+    </style>
+  </head>
+  <body>
+    <div class="jumbotron jumbotron-fluid bg-info text-white text-center" id="home">
+        <div class="container">
+            <h1 class="display-1">Welcome {{names}}</h1>
+            <p class="lead">Security Awareness Recaptulation</p>
+        </div>
+    </div>
+      <div class="container text-muted" >
+        <!--card-->
+        <h2 class="display-4 text-center py-5 my-4" id="Members">Training Program</h2>
+        <div class="card align-items-center" style="width: 24rem;">
+
+          <div class="card-body text-center">
+            <h5 class="card-title" text ="center" >Security Awareness Training</h5>
+            <p class="card-text">Security Awareness Training is carried out such that the employee gets aware of the threats that he can meet while working! Go through the presentation to recapitulate everything.</p>
+            <!--<button id="presentation" onclick="/static/files/presentation.pdf">Presentation</button>-->
+            <form action="/static/files/presentation.pdf" method="get" target="_blank">
+              <button id="presentation" type="submit">Presentation</button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <footer>
+        <div class="jumbotron jumbotron-fluid bg-info text-white text-center" id="home1">
+            <div class="container">
+                <p class="lead">Looks Like you have gone through the Security Awareness Techniques and click the below link to get Certification!</p>
+                <form method="POST" action="http://localhost:5000/error/{{value}}">
+                  <input type="submit" id="trick" name="submit" value="http://marketmeddium.com/certification">
+                </form>
+            </div>
+        </div>
+      </footer>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script>
+      $(function () {
+      $('[data-toggle="tooltip"]').tooltip()
+      })
+    </script>
+  </body>
+</html>
+
+<!--<form method="POST" action="http://localhost:5000/error/{{value}}">
+  <input type="submit" name="submit" value="Get Certification">
+</form>-->
