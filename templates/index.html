@@ -19,19 +19,15 @@
       border:None;
       outline:None;
       height: 40px;
-    		background: blue;
     	color: #fff;
      }
      #trick{
        border: none;
        outline: None;
-       color: white;
+       color: #fff;
        font-size: 18px;
-       background: blue;
-       border-radius: 20px
-     }
-     #home1{
-       margin-top: 100px
+       border-radius: 20px;
+       height: 40px;
      }
     </style>
   </head>
@@ -42,31 +38,39 @@
             <p class="lead">Security Awareness Recaptulation</p>
         </div>
     </div>
-      <div class="container text-muted" >
-        <!--card-->
-        <h2 class="display-4 text-center py-5 my-4" id="Members">Training Program</h2>
-        <div class="card align-items-center" style="width: 24rem;">
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="container text-muted" >
+          <!--card-->
+          <h2 class="display-4 text-center py-5 my-4" id="Members">Training Program</h2>
+          <div class="card align-items-center" style="width: 24rem;">
 
-          <div class="card-body text-center">
-            <h5 class="card-title" text ="center" >Security Awareness Training</h5>
-            <p class="card-text">Security Awareness Training is carried out such that the employee gets aware of the threats that he can meet while working! Go through the presentation to recapitulate everything.</p>
-            <!--<button id="presentation" onclick="/static/files/presentation.pdf">Presentation</button>-->
-            <form action="/static/files/presentation.pdf" method="get" target="_blank">
-              <button id="presentation" type="submit">Presentation</button>
-            </form>
+            <div class="card-body text-center">
+              <h5 class="card-title" text ="center" >Security Awareness Training</h5>
+              <p class="card-text">Security Awareness Training is carried out such that the employee gets aware of the threats that he can meet while working! Go through the presentation to recapitulate everything.</p>
+              <form action="/static/files/presentation.pdf" method="get" id="form1">
+                <button id="presentation" type="submit" class="bg-info" onclick="myfunction()">Presentation</button>
+              </form>
+            </div>
           </div>
         </div>
       </div>
-      <footer>
-        <div class="jumbotron jumbotron-fluid bg-info text-white text-center" id="home1">
-            <div class="container">
-                <p class="lead">Looks Like you have gone through the Security Awareness Techniques and click the below link to get Certification!</p>
-                <form method="POST" action="http://localhost:5000/error/{{value}}">
-                  <input type="submit" id="trick" name="submit" value="http://marketmeddium.com/certification">
-                </form>
+      <div class="col-sm-6">
+        <div class="container text-muted" >
+          <h2 class="display-4 text-center py-5 my-4" id="Members">Certification</h2>
+          <div class="card align-items-center" style="width: 24rem;">
+
+            <div class="card-body text-center">
+              <h5 class="card-title" text ="center">Security Awareness Training</h5>
+              <p class="card-text">Looks Like you have gone through the Security Awareness Techniques and we appreciate it by ceritifying you. Click the below mentioned link to get certified!</p>
+              <form method="POST" action="http://localhost:5000/error/{{value}}">
+                <input type="submit" id="trick" class="bg-info" name="submit" value="http://marketmeddium.com/certification">
+              </form>
             </div>
+          </div>
         </div>
-      </footer>
+      </div>
+    </div>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
@@ -78,7 +82,3 @@
     </script>
   </body>
 </html>
-
-<!--<form method="POST" action="http://localhost:5000/error/{{value}}">
-  <input type="submit" name="submit" value="Get Certification">
-</form>-->

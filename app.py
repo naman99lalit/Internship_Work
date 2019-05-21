@@ -1,10 +1,13 @@
 from flask import Flask,render_template, redirect, url_for, request, make_response,flash
+import datetime
 app = Flask(__name__)
 app.secret_key = 'some_secret'
 
-global value
+now = datetime.datetime.now()
+global value,time1
 value = 0
-array = []
+time1 = 0
+array = { }
 logins = {
     'naman':'naman.lalit@marketmedium.com',
     'Abhishek Verma': 'abhishek.verma@marketmedium.com',
@@ -24,7 +27,7 @@ def details():
 
 @app.route("/data", methods = ['POST','GET'])
 def data():
-    return render_template("data1.html",len = len(array), array=array)
+    return render_template("data1.html", array=array)
 
 @app.route("/index",methods= ['POST','GET'])
 def index():
@@ -45,10 +48,10 @@ def error(value):
     if request.method=='POST':
         if request.form['submit']=="http://marketmeddium.com/certification":
             print(value)
-            print(array)
             if(value not in array):
-                array.append(value)
-            print(array)
+                time1 = now.strftime("%Y-%m-%d")
+                print(time1)
+                array[value]=time1
     return render_template("error.html")
 if __name__=='__main__':
 	app.run(debug = True)

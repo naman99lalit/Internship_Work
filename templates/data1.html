@@ -21,21 +21,17 @@
         <table class="table table-striped">
   <thead align = "center">
     <tr>
-      <th scope="col" >S.No</th>
-      <th scope="col">Name</th>
+      <th scope="col">Email Ids</th>
+      <th scope="col">Date</th>
     </tr>
   </thead>
   <tbody>
-    {% for i in range(0,len) %}
-       <tr>
-       <td align = "center">{{ i+1 }}</td>
-       <td align = center>{{ array[i] }}</td>
-     </tr>
+    {% for key,value in array.items() %}
+    <tr>
+      <td align = center>{{ key }}</td>
+      <td align = center>{{value}}</td>
+    </tr>
     {% endfor %}
-    <!--<tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-    </tr>-->
   </tbody>
 </table>
       </div>
@@ -47,6 +43,5 @@
       $('[data-toggle="tooltip"]').tooltip()
       })
     </script>
-    <a href="#home" target="_top">Back To Top</a>
   </body>
 </html>
