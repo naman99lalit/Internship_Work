@@ -29,6 +29,9 @@
        border-radius: 20px;
        height: 40px;
      }
+     #main{
+       background:#D3D3D3
+     }
     </style>
   </head>
   <body>
@@ -39,7 +42,7 @@
         </div>
     </div>
     <div class="row">
-      <div class="col-sm-6">
+      <div class="col-sm-12">
         <div class="container text-muted" >
           <!--card-->
           <h2 class="display-4 text-center py-5 my-4" id="Members">Training Program</h2>
@@ -48,23 +51,8 @@
             <div class="card-body text-center">
               <h5 class="card-title" text ="center" >Security Awareness Training</h5>
               <p class="card-text">Security Awareness Training is carried out such that the employee gets aware of the threats that he can meet while working! Go through the presentation to recapitulate everything.</p>
-              <form action="/static/files/presentation.pdf" method="get" id="form1">
-                <button id="presentation" type="submit" class="bg-info" onclick="myfunction()">Presentation</button>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-6">
-        <div class="container text-muted" >
-          <h2 class="display-4 text-center py-5 my-4" id="Members">Certification</h2>
-          <div class="card align-items-center" style="width: 24rem;">
-
-            <div class="card-body text-center">
-              <h5 class="card-title" text ="center">Security Awareness Training</h5>
-              <p class="card-text">Looks Like you have gone through the Security Awareness Techniques and we appreciate it by ceritifying you. Click the below mentioned link to get certified!</p>
-              <form method="POST" action="http://localhost:5000/error/{{value}}">
-                <input type="submit" id="trick" class="bg-info" name="submit" value="http://marketmeddium.com/certification">
+              <form action="http://localhost:5000/main/{{value}}" method="POST">
+                <input id="presentation" type="submit" class="bg-info" name="Presentation" value=" Training ">
               </form>
             </div>
           </div>

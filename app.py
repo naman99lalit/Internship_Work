@@ -53,5 +53,14 @@ def error(value):
                 print(time1)
                 array[value]=time1
     return render_template("error.html")
+
+@app.route("/main/<value>", methods=['POST','GET'])
+def main(value):
+    if request.method=='POST':
+        if request.form['Presentation']==" Training ":
+            print(value)
+            return render_template("main.html",value=value)
+
+
 if __name__=='__main__':
 	app.run(debug = True)

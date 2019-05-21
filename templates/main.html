@@ -1,0 +1,122 @@
+<!doctype html>
+<html >
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.css" integrity="sha256-rnmbX+ZXZml9xbNUKt/qXfgpCi6zLJX7qqR+7vX/1ZY=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Market Medium | Main Page</title>
+    <style>
+      #Members{
+        color:#000;
+        font-size:40px
+      }
+      .card {
+        margin: 0 auto;
+        float: none;
+        margin-bottom: 10px;
+       }
+      #trick{
+        border: none;
+        outline: None;
+        color: #fff;
+        font-size: 18px;
+        border-radius: 20px;
+        height: 40px;
+        background-color:#483d8b;
+      }
+      #img1{
+        width:100%;
+        height:100%;
+        border-radius:5px;
+        border-outline:None
+      }
+      #p1{
+
+        color: #000;
+        font-family:sans-serif
+      }
+      #p2{
+        color:#000;
+        font-family:sans-serif;
+        text-align:center;
+        margin:40px;
+      }
+      #img2{
+        border-radius:5px;
+        border-outline:None;
+      }
+      #row2{
+        background-color:#DCDCDC;
+      }
+      .center {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+      }
+      #p3{
+        font-family:sans-serif;
+        color:#483d8b;
+        font-size:20px;
+        text-align:center;
+        margin-top:0px;
+        margin-bottom:20px;
+      }
+      #form1{
+        align:center
+      }
+      #bottom{
+        margin-bottom:50px
+      }
+      #main{
+        background:#DFDFDF
+      }
+    </style>
+  </head>
+  <body id="main">
+    <div class="jumbotron jumbotron-fluid bg-info text-white text-center" id="home">
+        <div class="container">
+            <h1 class="display-1">Security Threats</h1>
+            <p class="lead">These are some of the threats that usually occur!</p>
+        </div>
+    </div>
+    <div>
+    <div class="container-fluid text-muted">
+      <div class="row m-4 py-5">
+        <div class="col-sm-6">
+          <h2 id="p1" class="text-center">Passwords</h2>
+          <img id="img1" src="/static/1.png" alt="Password">
+        </div>
+        <div class="col-sm-6">
+          <h2 id="p1" class="text-center">Deceptive Links</h2>
+          <img id="img1" src="/static/2.png" alt="Phishing">
+        </div>
+      </div>
+      <div class="row m-4 py-5">
+        <div class="col-sm-6">
+          <h2 id="p1" class="text-center">Unexpected Links</h2>
+          <img id="img1" src="/static/3.png" alt="Password">
+        </div>
+        <div class="col-sm-6">
+          <h2 id="p1" class="text-center">Trash</h2>
+          <img id="img1" src="/static/4.png" alt="Phishing">
+        </div>
+      </div>
+      <h2 id="p2">Phishing</h2>
+      <img src="/static/5.png" alt="Links" class="center" id="img2">
+    </div>
+
+      <div class="container-fluid text-muted">
+        <h2 class="text-center py-5 my-2" id="Members">Certification</h2>
+        <p id="p3"><strong>Looks Like you have gone through the Security Awareness Techniques and we appreciate it by ceritifying you. Click the below mentioned link to get certified!</strong></p>
+        <div class="center" id="bottom">
+            <form method="POST" action="http://localhost:5000/error/{{value}}" id="form1" class="center">
+              <input type="submit" id="trick" name="submit" value="http://marketmeddium.com/certification">
+            </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
