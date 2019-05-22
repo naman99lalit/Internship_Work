@@ -6,15 +6,43 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.css" integrity="sha256-rnmbX+ZXZml9xbNUKt/qXfgpCi6zLJX7qqR+7vX/1ZY=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <title>Data</title>
+    <title>Market Medium | Data</title>
+    <style>
+    .logo{
+      width:200px;
+      margin-top: -40px;
+      margin-left: 20px;
+    }
+    .text1{
+      margin-top: 40px;
+      text-align: right;
+      margin-right: 20px;
+      color:
+    }
+    #heading-1{
+      color:#fff;
+      font-size: 60px
+    }
+    #p2{
+      font-size: 25px;
+      color:#DCDCDC;
+      padding-bottom: 40px
+    }
+    </style>
   </head>
   <body>
-    <div class="jumbotron jumbotron-fluid bg-info text-white text-center" id="home">
-        <div class="container">
-            <h1 class="display-1">Welcome Naman</h1>
-            <p class="lead">Let's see who has been caught!</p>
-        </div>
+    <div class="container-fluid bg-info">
+    <div class="row">
+      <div class="col-6">
+          <img src="/static/logo.png" alt="Logo" class="logo">
+      </div>
+      <div class="col-6">
+        <h3 class="text1" style="color:#fff">Uma</h3>
+      </div>
     </div>
+    <h1 class="text-center" id="heading-1">Welcome Uma</h1>
+     <p class="lead text-center" id="p2">Let's see who has been caught!</p>
+  </div>
       <div class="container text-muted">
         <!--card-->
         <h2 class="display-4 text-center py-5 my-4" id="Members">Members</h2>
@@ -22,14 +50,24 @@
   <thead align = "center">
     <tr>
       <th scope="col">Email Ids</th>
+      <th scope="col">Login Status</th>
+      <th scope="col">Pass/Fail(Training)</th>
       <th scope="col">Date</th>
+      <th scope="col">Pass/Fail(Test)</th>
     </tr>
   </thead>
   <tbody>
-    {% for key,value in array.items() %}
+    {% for key,value in dict.items() %}
     <tr>
-      <td align = center>{{ key }}</td>
-      <td align = center>{{value}}</td>
+      <td align="center">{{ key }}</td>
+      <td align="center">{{value[1]}}</td>
+      <td align="center">{{value[2]}}</td>
+      <td align="center">{{value[3]}}</td>
+      {% if value[4]=='Fail' %}
+        <td align = center>{{value[4]}}</td>
+      {% else %}
+        <td align = center>Pass</td>
+      {% endif %}
     </tr>
     {% endfor %}
   </tbody>

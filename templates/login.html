@@ -7,10 +7,12 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.css" integrity="sha256-rnmbX+ZXZml9xbNUKt/qXfgpCi6zLJX7qqR+7vX/1ZY=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 		<style>
-		body{
-	margin: 0;
-	padding: 0;
-	background: url('static/image.jpg');
+body{
+	background-image:linear-gradient(to bottom,#312a37, #4a4251);
+  background-repeat:repeat;
+  background-size:cover;
+  height:75%;
+  min-height:768px;
 	background-size: cover;
 	background-position: center;
 	font-family: sans-serif;
@@ -18,7 +20,7 @@
 .login-box{
 	width: 320px;
 	height: 420px;
-	background: #DCDCDC;
+	background: #fff;
 	border-radius:5px;
 	color: #fff;
 	top: 50%;
@@ -35,6 +37,11 @@
 	top: -60px;
 	margin-left: 30px;
 	margin-bottom: 60px
+}
+.avatar1{
+	width: 200px;
+	margin-left: 30px;
+	margin-top: 40px;
 }
 h1{
 	margin: 0;
@@ -64,9 +71,9 @@ h1{
 .login-box input[type="submit"]
 {
 	border: none;
-	outline: none;
+	outline:none;
 	height: 40px;
-		background: #1c8adb;
+	background: #1c8adb;
 	color: #fff;
 	font-size: 18px;
 	border-radius: 20px;
@@ -74,12 +81,12 @@ h1{
 .login-box input[type="submit"]:hover
 {
 	cursor: pointer;
-	background: #39dc79;
-	color: #000;
+	background: linear-gradient(to bottom,#37D5D6,#36096D);
+	color: #fff;
 }
 
 .login-box a{
-	text-decoration: none;
+	text-decoration:none;
 	font-size: 14px;
 	color: #000;
 }
@@ -100,6 +107,9 @@ h1{
     	</script>
   		{% endif %}
 		{% endwith %}
+		<div id="image1">
+			<img src="./static/mm2.png" class="avatar1">
+		</div>
     <div class="login-box">
     <img src="./static/logo.png" class="avatar">
         <h1 style="color: #1c8adb; margin: 25px">Login Here</h1>
@@ -111,6 +121,5 @@ h1{
             <input type="submit" name="submit" value="Enter">
             </form>
         </div>
-
     </body>
 </html>

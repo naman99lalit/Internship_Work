@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.css" integrity="sha256-rnmbX+ZXZml9xbNUKt/qXfgpCi6zLJX7qqR+7vX/1ZY=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <title>Oops</title>
+    <title>Market Medium | Main Page</title>
     <style>
     .card {
       margin: 0 auto;
@@ -32,15 +32,36 @@
      #main{
        background:#D3D3D3
      }
+     .logo{
+       width:200px;
+       margin-top: -40px;
+       margin-left: 20px;
+     }
+     .text1{
+       margin-top: 40px;
+       text-align: right;
+       margin-right: 20px;
+       color:
+     }
+     #heading-1{
+       padding-bottom: 50px;
+       color:#fff;
+       font-size: 60px
+     }
     </style>
   </head>
   <body>
-    <div class="jumbotron jumbotron-fluid bg-info text-white text-center" id="home">
-        <div class="container">
-            <h1 class="display-1">Welcome {{names}}</h1>
-            <p class="lead">Security Awareness Recaptulation</p>
-        </div>
+    <div class="container-fluid bg-info">
+    <div class="row">
+      <div class="col-6">
+          <img src="/static/logo.png" alt="Logo" class="logo">
+      </div>
+      <div class="col-6">
+        <h3 class="text1" style="color:#fff">{{names}}</h3>
+      </div>
     </div>
+    <h1 class="text-center" id="heading-1">Anti Phishing Training</h1>
+  </div>
     <div class="row">
       <div class="col-sm-12">
         <div class="container text-muted" >
@@ -49,9 +70,9 @@
           <div class="card align-items-center" style="width: 24rem;">
 
             <div class="card-body text-center">
-              <h5 class="card-title" text ="center" >Security Awareness Training</h5>
-              <p class="card-text">Security Awareness Training is carried out such that the employee gets aware of the threats that he can meet while working! Go through the presentation to recapitulate everything.</p>
-              <form action="http://localhost:5000/main/{{value}}" method="POST">
+              <h5 class="card-title" text ="center" >Anti-Phishing Awareness</h5>
+              <p class="card-text">Phishing is an important threatand therefore Anti-Phishing must be carried out such that the employee gets aware of the threats that he can meet while working! Go through the training to recapitulate everything.</p>
+              <form action="http://localhost:5000/main/{{value}}/{{names}}" method="POST">
                 <input id="presentation" type="submit" class="bg-info" name="Presentation" value=" Training ">
               </form>
             </div>

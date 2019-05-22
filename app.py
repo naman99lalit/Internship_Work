@@ -7,7 +7,8 @@ now = datetime.datetime.now()
 global value,time1
 value = 0
 time1 = 0
-array = { }
+dict = {}
+arr=[]
 logins = {
     'naman':'naman.lalit@marketmedium.com',
     'Abhishek Verma': 'abhishek.verma@marketmedium.com',
@@ -27,7 +28,7 @@ def details():
 
 @app.route("/data", methods = ['POST','GET'])
 def data():
-    return render_template("data1.html", array=array)
+    return render_template("data1.html",dict=dict)
 
 @app.route("/index",methods= ['POST','GET'])
 def index():
@@ -36,7 +37,8 @@ def index():
         value = request.form['Email']
         names=request.form['Name']
         if value in logins.values():
-            print(value)
+            dict[value]=['0']
+            dict[value].append('Logged In')
             return render_template("index.html",value=value,names=names)
         else:
             flash('Invalid Credentials! Please check your details.')
@@ -47,20 +49,20 @@ def index():
 def error(value):
     if request.method=='POST':
         if request.form['submit']=="http://marketmeddium.com/certification":
+            dict[value].append('Fail')
             print(value)
-            if(value not in array):
-                time1 = now.strftime("%Y-%m-%d")
-                print(time1)
-                array[value]=time1
-    return render_template("error.html")
+            print(dict)
+            return render_template("error.html")
 
-@app.route("/main/<value>", methods=['POST','GET'])
-def main(value):
+@app.route("/main/<value>/<names>", methods=['POST','GET'])
+def main(value,names):
     if request.method=='POST':
         if request.form['Presentation']==" Training ":
-            print(value)
-            return render_template("main.html",value=value)
-
+            dict[value].append('Pass')
+            time1 = now.strftime("%Y-%m-%d")
+            dict[value].append(time1)
+            print(dict)
+            return render_template("main.html",value=value,names=names)
 
 if __name__=='__main__':
 	app.run(debug = True)
