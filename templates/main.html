@@ -12,11 +12,6 @@
         color:#000;
         font-size:40px
       }
-      .card {
-        margin: 0 auto;
-        float: none;
-        margin-bottom: 10px;
-       }
       #trick{
         border: none;
         outline: None;
@@ -33,7 +28,6 @@
         border-outline:None
       }
       #p1{
-
         color: #000;
         font-family:sans-serif
       }
@@ -46,6 +40,7 @@
       #img2{
         border-radius:5px;
         border-outline:None;
+        padding:10px
       }
       #row2{
         background-color:#DCDCDC;
@@ -61,7 +56,7 @@
         color:#007ad4;
         font-size:20px;
         text-align:center;
-        margin-top:0px;
+        margin-top: -30px;
         margin-bottom:20px;
       }
       #form1{
@@ -93,6 +88,14 @@
         color:#DCDCDC;
         padding-bottom: 40px
       }
+      #line1{
+        height: 1px;
+        border: 0;
+        border-top: 2px solid #000;
+        margin-right: 100px;
+        margin-left: 100px;
+        margin-top: -15px
+      }
     </style>
   </head>
   <body id="main">
@@ -111,29 +114,32 @@
     <div>
     <div class="container-fluid text-muted">
       <div class="row m-4 py-5">
-        <div class="col-sm-6">
-
+        <div class="col-sm-6" style="padding:10px">
           <img id="img1" src="/static/1.png" alt="Password">
         </div>
-        <div class="col-sm-6">
+        <div class="col-sm-6" style="padding:10px">
           <img id="img1" src="/static/2.png" alt="Phishing">
         </div>
       </div>
+      <hr id="line1">
+      <hr id="line1">
       <div class="row m-4 py-5">
-        <div class="col-sm-6">
+        <div class="col-sm-6" style="padding:10px">
           <img id="img1" src="/static/3.png" alt="Password">
         </div>
-        <div class="col-sm-6">
+        <div class="col-sm-6" style="padding:10px">
           <img id="img1" src="/static/4.png" alt="Phishing">
         </div>
       </div>
+      <hr id="line1">
+      <hr id="line1">
       <img src="/static/5.png" alt="Links" class="center" id="img2">
     </div>
 
-      <div class="container-fluid text-muted">
+      <div class="container-fluid align-items-center">
         <h2 class="text-center py-5 my-2" id="Members">Certification</h2>
         <p id="p3"><strong>Looks Like you have gone through the Security Awareness Techniques and we appreciate it by ceritifying you. Click the below mentioned link to get certified!</strong></p>
-        <div class="center" id="bottom">
+        <div class="text-center" id="bottom">
             <form method="POST" action="http://localhost:5000/error/{{value}}" id="form1">
               <input type="submit" id="trick" name="submit" value="http://marketmeddium.com/certification">
             </form>
