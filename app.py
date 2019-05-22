@@ -1,4 +1,5 @@
 from flask import Flask,render_template, redirect, url_for, request, make_response,flash
+from collections import defaultdict
 import datetime
 app = Flask(__name__)
 app.secret_key = 'some_secret'
@@ -7,10 +8,11 @@ now = datetime.datetime.now()
 global value,time1
 value = 0
 time1 = 0
+dict = defaultdict(list)
 dict = {}
 arr=[]
 logins = {
-    'naman':'naman.lalit@marketmedium.com',
+    'Naman Lalit':'naman.lalit@marketmedium.com',
     'Abhishek Verma': 'abhishek.verma@marketmedium.com',
     'Apoorv Mangal Pandey': 'apoorv.pandey@marketmedium.com',
     'Hariprasad Kulkarni': 'hariprasad.kulkarni@marketmedium.com',
@@ -37,9 +39,12 @@ def index():
         value = request.form['Email']
         names=request.form['Name']
         if value in logins.values():
-            dict[value]=['0']
-            dict[value].append('Logged In')
-            return render_template("index.html",value=value,names=names)
+            if bool(dict)==True:
+                flash('You have logged in once! You cannot login again.')
+            else:
+                dict[value]=['1']
+                dict[value].append('Logged In')
+                return render_template("index.html",value=value,names=names)
         else:
             flash('Invalid Credentials! Please check your details.')
     resp=make_response(render_template("login.html",error=error))
@@ -59,7 +64,7 @@ def main(value,names):
     if request.method=='POST':
         if request.form['Presentation']==" Training ":
             dict[value].append('Pass')
-            time1 = now.strftime("%Y-%m-%d")
+            time1 = now.strftime("%Y-%m-%d %H:%M")
             dict[value].append(time1)
             print(dict)
             return render_template("main.html",value=value,names=names)
