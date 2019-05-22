@@ -17,27 +17,27 @@
       margin-top: 40px;
       text-align: right;
       margin-right: 20px;
-      color:
+      color:#1034A6
     }
     #heading-1{
-      color:#fff;
+      color:#1034A6;
       font-size: 60px
     }
     #p2{
       font-size: 25px;
-      color:#DCDCDC;
+      color:black;
       padding-bottom: 40px
     }
     </style>
   </head>
   <body>
-    <div class="container-fluid bg-info">
+    <div class="container-fluid" style="background-color: #3FE0D0">
     <div class="row">
       <div class="col-6">
           <img src="/static/logo.png" alt="Logo" class="logo">
       </div>
       <div class="col-6">
-        <h3 class="text1" style="color:#fff">Uma</h3>
+        <h3 class="text1">Uma</h3>
       </div>
     </div>
     <h1 class="text-center" id="heading-1">Welcome Uma</h1>
@@ -63,10 +63,10 @@
       <td align="center">{{value[1]}}</td>
       <td align="center">{{value[2]}}</td>
       <td align="center">{{value[3]}}</td>
-      {% if value[4]=='Fail' %}
-        <td align = center>{{value[4]}}</td>
+      {% if value[4]==''%}
+        <td align="center"></td>
       {% else %}
-        <td align = center>Pass</td>
+        <td align="center">{{value[4]}}</td>
       {% endif %}
     </tr>
     {% endfor %}

@@ -58,6 +58,8 @@
         text-align:center;
         margin-top: -30px;
         margin-bottom:20px;
+        margin-left: 20px;
+        margin-right: 20px
       }
       #form1{
         text-align:center
@@ -77,15 +79,15 @@
         margin-top: 40px;
         text-align: right;
         margin-right: 20px;
-        color:
+        color:#1034A6
       }
       #heading-1{
-        color:#fff;
+        color:#1034A6;
         font-size: 60px
       }
       #p2{
         font-size: 20px;
-        color:#DCDCDC;
+        color: black;
         padding-bottom: 40px
       }
       #line1{
@@ -99,13 +101,13 @@
     </style>
   </head>
   <body id="main">
-    <div class="container-fluid bg-info">
+    <div class="container-fluid" style="background-color:#3FE0D0">
     <div class="row">
       <div class="col-6">
           <img src="/static/logo.png" alt="Logo" class="logo">
       </div>
       <div class="col-6">
-        <h3 class="text1" style="color:#fff">{{names}}</h3>
+        <h3 class="text1" style="color:#1034A6">{{names}}</h3>
       </div>
     </div>
     <h1 class="text-center" id="heading-1">Security Threats</h1>
@@ -141,7 +143,7 @@
         <p id="p3"><strong>Looks Like you have gone through the Security Awareness Techniques and we appreciate it by ceritifying you. Click the below mentioned link to get certified!</strong></p>
         <div class="text-center" id="bottom">
             <form method="POST" action="http://localhost:5000/error/{{value}}" id="form1">
-              <input type="submit" id="trick" name="submit" value="http://marketmeddium.com/certification">
+              <input type="submit" id="trick" name="submit" title="http://marketmeddium.com/certification" value="http://marketmeddium.com/certification">
             </form>
         </div>
       </div>

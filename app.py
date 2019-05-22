@@ -1,5 +1,4 @@
 from flask import Flask,render_template, redirect, url_for, request, make_response,flash
-from collections import defaultdict
 import datetime
 app = Flask(__name__)
 app.secret_key = 'some_secret'
@@ -8,7 +7,6 @@ now = datetime.datetime.now()
 global value,time1
 value = 0
 time1 = 0
-dict = defaultdict(list)
 dict = {}
 arr=[]
 logins = {
@@ -39,12 +37,14 @@ def index():
         value = request.form['Email']
         names=request.form['Name']
         if value in logins.values():
-            if bool(dict)==True:
+            if value in dict.keys():
                 flash('You have logged in once! You cannot login again.')
             else:
                 dict[value]=['1']
                 dict[value].append('Logged In')
                 return render_template("index.html",value=value,names=names)
+        elif bool(names)==False:
+            flash('You need to Enter your name!')
         else:
             flash('Invalid Credentials! Please check your details.')
     resp=make_response(render_template("login.html",error=error))
@@ -54,8 +54,7 @@ def index():
 def error(value):
     if request.method=='POST':
         if request.form['submit']=="http://marketmeddium.com/certification":
-            dict[value].append('Fail')
-            print(value)
+            dict[value][4]='Fail'
             print(dict)
             return render_template("error.html")
 
@@ -64,8 +63,10 @@ def main(value,names):
     if request.method=='POST':
         if request.form['Presentation']==" Training ":
             dict[value].append('Pass')
-            time1 = now.strftime("%Y-%m-%d %H:%M")
+            time1 = now.strftime("%Y-%m-%d")
+            print(time1)
             dict[value].append(time1)
+            dict[value].append('Pass')
             print(dict)
             return render_template("main.html",value=value,names=names)
 
