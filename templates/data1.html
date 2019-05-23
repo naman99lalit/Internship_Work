@@ -51,8 +51,8 @@
     <tr>
       <th scope="col">Email Ids</th>
       <th scope="col">Login Status</th>
-      <th scope="col">Pass/Fail(Training)</th>
       <th scope="col">Date</th>
+      <th scope="col">Pass/Fail(Training)</th>
       <th scope="col">Pass/Fail(Test)</th>
     </tr>
   </thead>
@@ -62,9 +62,13 @@
       <td align="center">{{ key }}</td>
       <td align="center">{{value[1]}}</td>
       <td align="center">{{value[2]}}</td>
-      <td align="center">{{value[3]}}</td>
+      {% if value[3]==''%}
+        <td align="center">Test Not Given</td>
+      {% else %}
+        <td align="center">{{value[3]}}</td>
+      {% endif %}
       {% if value[4]==''%}
-        <td align="center"></td>
+        <td align="center">Test Not Given</td>
       {% else %}
         <td align="center">{{value[4]}}</td>
       {% endif %}

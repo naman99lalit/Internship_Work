@@ -3,10 +3,7 @@ import datetime
 app = Flask(__name__)
 app.secret_key = 'some_secret'
 
-now = datetime.datetime.now()
-global value,time1
 value = 0
-time1 = 0
 dict = {}
 arr=[]
 logins = {
@@ -38,13 +35,18 @@ def index():
         names=request.form['Name']
         if value in logins.values():
             if value in dict.keys():
-                flash('You have logged in once! You cannot login again.')
+                now = datetime.datetime.now()
+                time1 = now.strftime("%Y-%m-%d  %H:%M:%S")
+                dict[value][2]=time1
+                return render_template("test.html",names=names)
             else:
                 dict[value]=['1']
                 dict[value].append('Logged In')
+                now = datetime.datetime.now()
+                time1 = now.strftime("%Y-%m-%d  %H:%M:%S")
+                print(time1)
+                dict[value].append(time1)
                 return render_template("index.html",value=value,names=names)
-        elif bool(names)==False:
-            flash('You need to Enter your name!')
         else:
             flash('Invalid Credentials! Please check your details.')
     resp=make_response(render_template("login.html",error=error))
@@ -55,6 +57,9 @@ def error(value):
     if request.method=='POST':
         if request.form['submit']=="http://marketmeddium.com/certification":
             dict[value][4]='Fail'
+            now = datetime.datetime.now()
+            time1 = now.strftime("%Y-%m-%d  %H:%M:%S")
+            dict[value][2]=time1
             print(dict)
             return render_template("error.html")
 
@@ -62,12 +67,11 @@ def error(value):
 def main(value,names):
     if request.method=='POST':
         if request.form['Presentation']==" Training ":
+            now = datetime.datetime.now()
+            time1 = now.strftime("%Y-%m-%d  %H:%M:%S")
+            dict[value][2]=time1
             dict[value].append('Pass')
-            time1 = now.strftime("%Y-%m-%d")
-            print(time1)
-            dict[value].append(time1)
             dict[value].append('Pass')
-            print(dict)
             return render_template("main.html",value=value,names=names)
 
 if __name__=='__main__':
