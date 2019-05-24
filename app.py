@@ -1,3 +1,5 @@
+#!"C:\Users\naman\Anaconda3\python.exe"
+
 from flask import Flask,render_template, redirect, url_for, request, make_response,flash
 import datetime
 app = Flask(__name__)
