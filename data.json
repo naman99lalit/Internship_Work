@@ -1,0 +1,44 @@
+{
+  "email": {
+    "Devops": [
+      "abhishek.verma@marketmedium.com",
+      "hariprasad.kulkarni@marketmedium.com",
+      "naman.lalit@marketmedium.com"
+    ],
+    "Security": [
+      "naman.lalit@marketmedium.com",
+      "Mariet.Nilappana@marketmedium.com",
+      "apoorv.pandey@marketmedium.com",
+      "bharath.sridhar@marketmedium.com",
+      "swati.soni@marketmedium.com",
+      "chaitanya.chinni@marketmedium.com",
+      "preetham.angadi@marketmedium.com",
+      "laxman.kadam@marketmedium.com",
+      "sudeep.reddy@marketmedium.com"
+    ],
+    "logins": {
+      "Naman Lalit": "naman.lalit@marketmedium.com",
+      "Abhishek Verma": "abhishek.verma@marketmedium.com",
+      "Apoorv Mangal Pandey": "apoorv.pandey@marketmedium.com",
+      "Hariprasad Kulkarni": "hariprasad.kulkarni@marketmedium.com",
+      "Bharath Sridhar": "bharath.sridhar@marketmedium.com",
+      "Swati Soni": "swati.soni@marketmedium.com",
+      "Mariet Nilappana": "Mariet.Nilappana@marketmedium.com",
+      "Chaitanya Chinni ": "chaitanya.chinni@marketmedium.com",
+      "Preetham Angadi": "preetham.angadi@marketmedium.com",
+      "Laxman Kadam": "laxman.kadam@marketmedium.com",
+      "Sudeep Reddy": "sudeep.reddy@marketmedium.com"
+    }
+  },
+  "trainings":{
+    "Security Training":{
+      "Security-Awareness": "https://training.advisera.com/awareness-session/security-awareness-training/"
+    },
+    "DevOps Training":{
+      "Git":"https://www.edureka.co/devops?gclid=Cj0KCQjw_r3nBRDxARIsAJljleG6UBvHRD7SDf1ha605MKBdoXh92Y_T_ME2vEouO6MV5PdXCbXD10saAjuWEALw_wcB",
+      "Docker":"https://www.edureka.co/devops?gclid=Cj0KCQjw_r3nBRDxARIsAJljleG6UBvHRD7SDf1ha605MKBdoXh92Y_T_ME2vEouO6MV5PdXCbXD10saAjuWEALw_wcB",
+      "Jenkins":"https://www.edureka.co/devops?gclid=Cj0KCQjw_r3nBRDxARIsAJljleG6UBvHRD7SDf1ha605MKBdoXh92Y_T_ME2vEouO6MV5PdXCbXD10saAjuWEALw_wcB",
+      "Deployment":"https://www.edureka.co/devops?gclid=Cj0KCQjw_r3nBRDxARIsAJljleG6UBvHRD7SDf1ha605MKBdoXh92Y_T_ME2vEouO6MV5PdXCbXD10saAjuWEALw_wcB"
+    }
+  }
+}

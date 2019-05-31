@@ -44,46 +44,73 @@
      <p class="lead text-center" id="p2">Let's see who has been caught!</p>
   </div>
       <div class="container text-muted">
-        <!--card-->
         <h2 class="display-4 text-center py-5 my-4" id="Members">Members</h2>
-        <table class="table table-striped">
-  <thead align = "center">
-    <tr>
-      <th scope="col">Email Ids</th>
-      <th scope="col">Login Status</th>
-      <th scope="col">Date</th>
-      <th scope="col">Pass/Fail(Training)</th>
-      <th scope="col">Pass/Fail(Test)</th>
-    </tr>
-  </thead>
-  <tbody>
-    {% for key,value in dict.items() %}
-    <tr>
-      <td align="center">{{ key }}</td>
-      <td align="center">{{value[1]}}</td>
-      <td align="center">{{value[2]}}</td>
-      {% if value[3]==''%}
-        <td align="center">Test Not Given</td>
-      {% else %}
-        <td align="center">{{value[3]}}</td>
-      {% endif %}
-      {% if value[4]==''%}
-        <td align="center">Test Not Given</td>
-      {% else %}
-        <td align="center">{{value[4]}}</td>
-      {% endif %}
-    </tr>
-    {% endfor %}
-  </tbody>
-</table>
+        <table class="table table-striped" style="margin-right:10px; margin-left:10px">
+          <thead align = "center">
+            <tr>
+              <th scope="col">Email Ids</th>
+              <th scope="col">Login Status</th>
+              <th scope="col">Category</th>
+              <th scope="col">Date</th>
+              <th scope="col">(Anti-Phishing Training)</th>
+              <th scope="col">(Anti-Phishing Test)</th>
+            </tr>
+          </thead>
+          <tbody>
+              {% for key,value in dict.items() %}
+              <tr>
+                <td align="center">{{key}}</td>
+                <td align="center">{{value[0]}}</td>
+                <td align="center">{{value[1]}}</td>
+                <td align="center">{{value[2]}}</td>
+                {% if value[1]=='Security' or value[1]=='Security& Devops' %}
+                <td align="center">{{value[3]}}</td>
+                <td align="center">{{value[4]}}</td>
+                {% else %}
+                <td align="center">Not Applicable</td>
+                <td align="center">Not Applicable</td>
+                {% endif %}
+
+              </tr>
+              {% endfor %}
+          </tbody>
+        </table>
       </div>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+
+      <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <script>
+    <script type="text/javascript">
       $(function () {
       $('[data-toggle="tooltip"]').tooltip()
       })
     </script>
+    <!--<script>
+      $(document).ready(function(){
+        var rowCount = $('#employee_table tr').length;
+        console.log(rowCount);
+        for(var i = rowCount; i > 1;i-)
+        {
+          document.getElementById("employee_table").deleteRow(i-1);
+        }
+        var p = $.getJSON("http://localhost:5000/static/database.json?a=1",
+          function(data){
+            var a = data;
+            console.log(a);
+            var drawing_data ='';
+            for (var key in a){
+              drawing_data += '<tr>';
+              drawing_data += '<td>' + key + '</td>';
+              drawing_data += '<td>' +a[key][0]+'</td>';
+              drawing_data += '<td>' +a[key][1]+'</td>';
+              drawing_data += '<td>' +a[key][2]+'</td>';
+              drawing_data += '<td>' +a[key][3]+'</td>';
+              drawing_data += '</tr>';
+            }
+            $('#employee_table').append(drawing_data);
+        });
+        setTimeout(function(){p.abort();},2000);
+      });
+    </script>-->
   </body>
 </html>

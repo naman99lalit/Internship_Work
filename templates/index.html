@@ -6,20 +6,22 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.css" integrity="sha256-rnmbX+ZXZml9xbNUKt/qXfgpCi6zLJX7qqR+7vX/1ZY=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <title>Market Medium | Main Page</title>
+    <title>Market Medium | Training Page</title>
     <style>
     .card {
       margin: 0 auto;
       float: none;
       margin-bottom: 10px;
+      background-color: #f2f2f2
      }
      #presentation{
        font-size: 18px;
-     	border-radius: 20px;
       border:None;
       outline:None;
       height: 40px;
-    	color: #fff;
+    	color: black;
+      font-family: sans-serif;
+      background-color: #f2f2f2
      }
      #trick{
        border: none;
@@ -49,7 +51,26 @@
        font-size: 60px
      }
      #header1{
-       background-color: #3FE0D0
+       background-color: #3FE0D0;
+     }
+     #card2{
+       border:none
+     }
+     #paragraph-1{
+       padding-top: 15px;
+       padding-bottom: 10px;
+       padding-left: 15px;
+       padding-right: 15px
+     }
+     #collapseExample1{
+       padding: 10px;
+     }
+     #collapseExample2{
+       padding: 10px;
+     }
+     #line1{
+       margin-right: 50px;
+       margin-left: 50px;
      }
     </style>
   </head>
@@ -63,21 +84,66 @@
         <h3 class="text1" style="color:#1034A6">{{names}}</h3>
       </div>
     </div>
-    <h1 class="text-center" id="heading-1">Anti-Phishing Training</h1>
+    <h1 class="text-center" id="heading-1">Training Portal</h1>
   </div>
-    <div class="row">
-      <div class="col-sm-12">
-        <div class="container text-muted" >
-          <!--card-->
-          <h2 class="display-4 text-center py-5 my-4" id="Members">Training Program</h2>
+  <h2 class="text-center py-5 my-4 text-muted" style="font-size:40px">Training Programs</h2>
+    <div class="row" style="margin-bottom:40px">
+      <div class="col-sm-6">
+        <div class="container" >
           <div class="card align-items-center" style="width: 24rem;">
-
             <div class="card-body text-center">
-              <h5 class="card-title" text ="center" >Anti-Phishing Awareness</h5>
-              <p class="card-text">Phishing is an important threat and therefore Anti-Phishing must be carried out such that the employee gets aware of the threats that he can encounter while working! Go through the training to recapitulate everything.</p>
-              <form action="http://localhost:5000/main/{{value}}/{{names}}" method="POST">
-                <input id="presentation" type="submit" class="bg-info" name="Presentation" value=" Training ">
-              </form>
+              <h4 class="card-title" text ="center" style="color:#1034A6">Security Training</h4>
+              <p class="card-text" id="paragraph-1">Security is an important issue that one must take care of.There are various types of security breaches like phishing, virus, spam emails etc. There are various trainings that are mentioned below.</p>
+              <p>
+                {% if dict[id][1]=='Security'%}
+                <a id="button1" onclick="document.getElementById('button2').disabled=false" class="btn btn-primary" data-toggle="collapse" href="#collapseExample1" role="button" aria-expanded="false" aria-controls="collapseExample" title="Click the button">Security Trainings</a>
+                {% elif dict[id][1]=='Security& Devops' %}
+                <a id="button1" class="btn btn-primary" data-toggle="collapse" href="#collapseExample1" role="button" aria-expanded="false" aria-controls="collapseExample" title="Click the button">Security Trainings</a>
+                {% endif %}
+              </p>
+              <div class="collapse" id="collapseExample1">
+                  <div>
+                   <form action="http://localhost:5000/main/{{id}}/{{names}}" method="POST">
+                     <input id="presentation" type="submit" name="Presentation" title="Anti-Phishing Training" value="Anti-Phishing">
+                   </form>
+                  </div>
+                  <hr id="line1">
+                  {% for key,value in test['Security Training'].items() %}
+                   <div>
+                    <form action={{value}} method="POST">
+                      <input id="presentation" type="submit" name="Presentation" title="{{key}} Training" value={{key}}>
+                    </form>
+                   </div>
+                   <hr id="line1">
+                  {% endfor %}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="container">
+          <div class="card align-items-center" style="width: 24rem;">
+            <div class="card-body text-center">
+              <h4 class="card-title" text ="center" style="color:#1034A6">DevOps Training</h4>
+              <p class="card-text" id="paragraph-1">Using open-source DevOps tools, One can take the power back from your proprietary IT vendors.It allows more stable operating environments, enhanced innovation and performance-focused employee teams</p>
+              <p>
+                {% if dict[id][1]=='Devops'%}
+                <a id="button2" onclick="document.getElementById('button1').disabled=false" class="btn btn-primary" data-toggle="collapse" href="#collapseExample2" role="button" aria-expanded="false" aria-controls="collapseExample" title="Click the button">Devops Trainings</a>
+                {% elif dict[id][1]=='Security& Devops' %}
+                <a id="button2" class="btn btn-primary" data-toggle="collapse" href="#collapseExample2" role="button" aria-expanded="false" aria-controls="collapseExample" title="Click the button">Devops Trainings</a>
+                {% endif %}
+              </p>
+              <div class="collapse" id="collapseExample2">
+                 {% for key,value in test['DevOps Training'].items() %}
+                  <div>
+                    <form action={{value}} method="POST">
+                      <input id="presentation" type="submit" name="Presentation" title="{{key}} Training" value={{key}}>
+                    </form>
+                  </div>
+                  <hr id="line1">
+                 {% endfor %}
+              </div>
             </div>
           </div>
         </div>
