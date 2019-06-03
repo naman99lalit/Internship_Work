@@ -9,27 +9,27 @@ with open('data.json','r') as outfile:
     dataset = json.load(outfile)
 
 id = 0
-dict ={}
+dict ={} # Initialising the dictionary to null when server restarts
 with open('database.json','w') as f:
     json.dump(dict,f)
     f.close()
 
-@app.route("/")
+@app.route("/") #Login page
 def details():
     with open('database.json','r') as f:
         dict = json.load(f)
     return render_template('login.html')
 
 
-@app.route("/data", methods = ['POST','GET'])
+@app.route("/data", methods = ['POST','GET']) #Database Route
 def data():
-    with open('database.json','r') as f:
+    with open('database.json','r') as f: #Opening the file and passing data
         dict = json.load(f)
         f.close()
     return render_template("data1.html",dict=dict)
 
 
-@app.route("/index",methods= ['POST','GET'])
+@app.route("/index",methods= ['POST','GET']) #Training Page
 def index():
     error = None
     if request.method == 'POST':
@@ -63,29 +63,29 @@ def index():
                 dict[id].append(time1) #adding time
                 with open('database.json','w') as outfile:
                     json.dump(dict,outfile)
-                test = dataset['trainings']
+                test = dataset['trainings'] #Passing the data of different types of trainings
                 return render_template("index.html",id=id,names=names,test=test,dict=dict)
         else:
             flash('Invalid Credentials! Please check your details.')
     resp=make_response(render_template("login.html",error=error))
     return resp
 
-@app.route("/error/<id>",methods = ['POST' , 'GET'])
+@app.route("/error/<id>",methods = ['POST' , 'GET']) #Last Page for Anti-Phishing
 def error(id):
     if request.method=='POST':
         if request.form['submit']=="http://marketmeddium.com/certification":
             dict[id][4]='Fail'
             now = datetime.datetime.now()
             time1 = now.strftime("%Y-%m-%d  %H:%M:%S")
-            dict[id][2]=time1
+            dict[id][2]=time1  # Updating the time
             with open('database.json','w') as outfile:
                 json.dump(dict,outfile)
             return render_template("error.html")
 
-@app.route("/main/<id>/<names>", methods=['POST','GET'])
+@app.route("/main/<id>/<names>", methods=['POST','GET']) #Anti-Phishing training page
 def main(id,names):
     if request.method=='POST':
-        if request.form['Presentation']=="Anti-Phishing":
+        if request.form['Presentation']=="Anti-Phishing":  #Checking whether the button is clicked or not
             now = datetime.datetime.now()
             time1 = now.strftime("%Y-%m-%d  %H:%M:%S")
             dict[id][2]=time1
